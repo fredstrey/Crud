@@ -56,3 +56,21 @@ def count_lines(filename):
 def write_to_file(filename, content):
     with open(filename, 'w') as file:
         file.write(content)
+
+#verificar email
+import re
+
+def validar_email(email):
+    padrao = r'^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$'
+    return re.match(padrao, email) is not None
+
+def main():
+    email = input("Digite um endereço de email: ")
+    
+    if validar_email(email):
+        print("O email é válido.")
+    else:
+        print("O email não é válido.")
+
+if __name__ == "__main__":
+    main()
